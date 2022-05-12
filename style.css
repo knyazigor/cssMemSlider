@@ -1,0 +1,39 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #25282a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+input[type="radio"] {
+  appearance: none;
+  color: #7faae8;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #7faae8;
+  background-color: #7faae8;
+  border-radius: 50%;
+}
+
+input[type="radio"]:hover {
+  cursor: pointer;
+  background-color: white;
+  border-color: white;
+}
+
+input[type="radio"]:checked {
+  background-color: #25282a;
+}
