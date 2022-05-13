@@ -1,4 +1,6 @@
-
+:root {
+  --slide-width: 80vw;
+}
 
 * {
   box-sizing: border-box;
@@ -19,6 +21,133 @@ body {
 }
 
 input[type="radio"] {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slider__content {  
+  display: flex;
+  overflow-x: hidden;
+  width: var(--slide-width);
+  align-items: center;
+  transition: .3s;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--slide-width);
+  transition: .3s ease-in-out;
+}
+
+.slider__content img {
+  max-width: var(--slide-width);
+  max-height: 80vh;
+}
+
+.slider__footer {  
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+  width: var(--slide-width);
+}
+
+.slider__titles {
+  display: flex;
+}
+
+.slider__title {
+  display: none;
+}
+
+.slider__dots {
+  display: flex;
+  gap: 0.8em;
+}
+
+.slider__dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7faae8;
+  width: 1.15em;
+  height: 1.15em;
+
+  border: 0.15em solid #7faae8;
+  background-color: #7faae8;
+  border-radius: 50%;
+}
+
+.slider__dot:hover {
+  cursor: pointer;
+  background-color: white;
+  border-color: white;
+}
+
+#radio1:checked ~.slider__footer .slider__dots #dot1,
+#radio2:checked ~.slider__footer .slider__dots #dot2,
+#radio3:checked ~.slider__footer .slider__dots #dot3,
+#radio4:checked ~.slider__footer .slider__dots #dot4,
+#radio5:checked ~.slider__footer .slider__dots #dot5 {
+  background-color: #25282a;
+}
+
+#radio1:checked ~.slider__footer .slider__titles #title1,
+#radio2:checked ~.slider__footer .slider__titles #title2,
+#radio3:checked ~.slider__footer .slider__titles #title3,
+#radio4:checked ~.slider__footer .slider__titles #title4,
+#radio5:checked ~.slider__footer .slider__titles #title5 {
+  display: inline-block;
+  animation: show .3s ease-in-out;
+}
+
+#radio1:checked ~.slider__content .slide_first {
+  margin-left: 0vw;
+}
+
+#radio2:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*1);
+}
+
+#radio3:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*2);
+}
+
+#radio4:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*3);
+}
+
+#radio5:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*4);
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* .slider__radio:checked ~.slider__dots .slider__dot.dot2,
+.slider__radio:checked ~.slider__dots .slider__dot.dot3,
+.slider__radio:checked ~.slider__dots .slider__dot.dot4,
+.slider__radio:checked ~.slider__dots .slider__dot.dot5  */
+
+
+
+/* input[type="radio"] {
   appearance: none;
   color: #7faae8;
   width: 1.15em;
@@ -37,3 +166,79 @@ input[type="radio"]:hover {
 input[type="radio"]:checked {
   background-color: #25282a;
 }
+
+.slider {
+  display: grid;
+  grid-template-rows: 80vh 10vh;
+  grid-template-columns: 10vw repeat(15, 5vw) 10vw;
+  width: 100%;
+
+}
+
+.slider__content {
+  grid-row: 1 / 2;
+  grid-column: 2 / 9;
+  display: flex;
+  overflow-x: hidden;
+  width: 80vw;
+  align-items: center;
+  transition: .3s;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80vw;
+  transition: .3s ease-in-out;
+}
+
+.slider__content img {
+  max-width: var(--slide-width);
+  max-height: 80vh;
+}
+
+.slider__radio {
+  grid-row: 2 / 2;
+  justify-self: end;
+}
+
+#radio1 {
+  grid-column: -7;
+}
+
+#radio2 {
+  grid-column: -6;
+}
+
+#radio3 {
+  grid-column: -5;
+}
+
+#radio4 {
+  grid-column: -4;
+}
+
+#radio5 {
+  grid-column: -3;
+}
+
+#radio1:checked ~.slider__content .slide_first {
+  margin-left: 0vw;
+}
+
+#radio2:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*1);
+}
+
+#radio3:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*2);
+}
+
+#radio4:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*3);
+}
+
+#radio5:checked ~.slider__content .slide_first {
+  margin-left: calc(-1*var(--slide-width)*4);
+} */
