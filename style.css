@@ -56,10 +56,10 @@ input[type="radio"] {
 
 .slider__content img {
   max-width: var(--slide-width);
-  max-height: 80vh;
+  max-height: 70vh;
   border-radius: 0.8em;
-  -webkit-box-shadow: 5px 5px 3px 0px #000000; 
-  box-shadow: 5px 5px 3px 0px #000000;
+  -webkit-box-shadow: 0.3em 0.3em 0.1em 0 #000000; 
+  box-shadow: 0.3em 0.3em 0.1em 0 #000000;
 }
 
 .slider__footer {  
