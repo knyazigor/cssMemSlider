@@ -86,13 +86,11 @@ input[type="radio"] {
 
 .slider__dots {
   display: flex;
-  gap: 0.8em;
+  
 }
 
 .slider__dot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   color: #7faae8;
   width: 1.15em;
   height: 1.15em;
@@ -102,11 +100,23 @@ input[type="radio"] {
   border-radius: 50%;
 }
 
-.slider__dot:hover {
-  cursor: pointer;
-  background-color: white;
-  border-color: white;
+.slider__radio-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
 }
+
+.slider__radio-label:hover {
+  cursor: pointer;  
+}
+
+.slider__radio-label:hover >.slider__dot {
+  background-color: #25282a;
+}
+
 
 #radio1:checked ~.slider__footer .slider__dots #dot1,
 #radio2:checked ~.slider__footer .slider__dots #dot2,
